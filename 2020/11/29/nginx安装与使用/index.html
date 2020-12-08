@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>nginx安装与使用 - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="         一、安装 执行如下命令
+
+123$ brew search nginx$ brew install nginx
+安装完以后，可以在终端输出的信息里看到一些配置路径：/usr/loc,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">nginx安装与使用</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">nginx安装与使用</h1>
+        <div class="stuff">
+            <span>十一月 29, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Macos/" rel="tag">Macos</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/nginx/" rel="tag">nginx</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h3 id="一、安装"><a href="#一、安装" class="headerlink" title="         一、安装 "></a><span style="color:#e53ecb;">         一、安装 </span></h3><h4 id="执行如下命令"><a href="#执行如下命令" class="headerlink" title="执行如下命令"></a>执行如下命令</h4><a id="more"></a>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ brew search nginx</span><br><span class="line"></span><br><span class="line">$ brew install nginx</span><br></pre></td></tr></table></figure>
+<h4 id="安装完以后，可以在终端输出的信息里看到一些配置路径："><a href="#安装完以后，可以在终端输出的信息里看到一些配置路径：" class="headerlink" title="安装完以后，可以在终端输出的信息里看到一些配置路径："></a>安装完以后，可以在终端输出的信息里看到一些配置路径：</h4><p>/usr/local/etc/nginx/nginx.conf （配置文件路径）</p>
+<p>/usr/local/var/www （服务器默认路径）</p>
+<p>/usr/local/Cellar/nginx/1.8.0 （安装路径）</p>
+<h4 id="如果是macOS-1-12以上的系统，在安装过程中可能会出现”warning”，说是不支持该版本的操作系统，可以暂时先忽略它。"><a href="#如果是macOS-1-12以上的系统，在安装过程中可能会出现”warning”，说是不支持该版本的操作系统，可以暂时先忽略它。" class="headerlink" title="如果是macOS 1.12以上的系统，在安装过程中可能会出现”warning”，说是不支持该版本的操作系统，可以暂时先忽略它。"></a>如果是macOS 1.12以上的系统，在安装过程中可能会出现”warning”，说是不支持该版本的操作系统，可以暂时先忽略它。</h4><h3 id="二、启动"><a href="#二、启动" class="headerlink" title="        二、启动 "></a><span style="color:#e53ecb;">        二、启动 </span></h3><h4 id="在终端中输入"><a href="#在终端中输入" class="headerlink" title="在终端中输入"></a>在终端中输入</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef|grep nginx</span><br></pre></td></tr></table></figure>
+
+<h4 id="如果执行的结果是"><a href="#如果执行的结果是" class="headerlink" title="如果执行的结果是"></a>如果执行的结果是</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ 501 15800 1 0 12:17上午 ?? 0:00.00 nginx: master process /usr/<span class="built_in">local</span>/Cellar/nginx/1.8.0/bin/nginx -c /usr/<span class="built_in">local</span>/etc/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line">$ 501 15801 15800 0 12:17上午 ?? 0:00.00 nginx: worker process</span><br><span class="line"></span><br><span class="line">$ 501 15848 15716 0 12:21上午 ttys000 0:00.00 grep nginx</span><br></pre></td></tr></table></figure>
+
+<h4 id="表示已启动成功，如果不是上图结果，在终端中执行"><a href="#表示已启动成功，如果不是上图结果，在终端中执行" class="headerlink" title="表示已启动成功，如果不是上图结果，在终端中执行"></a>表示已启动成功，如果不是上图结果，在终端中执行</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ /usr/<span class="built_in">local</span>/Cellar/nginx/1.8.0/bin/nginx -c /usr/<span class="built_in">local</span>/etc/nginx/nginx.conf</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="命令即可启动nginx。"><a href="#命令即可启动nginx。" class="headerlink" title="命令即可启动nginx。"></a>命令即可启动nginx。</h4><p>这时候如果成功访问<code>localhost:8080</code>，说明成功安装和启动好了。</p>
+<h3 id="三、停止"><a href="#三、停止" class="headerlink" title="        三、停止 "></a><span style="color:#e53ecb;">        三、停止 </span></h3><h4 id="在终端中输入-1"><a href="#在终端中输入-1" class="headerlink" title="在终端中输入"></a>在终端中输入</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef|grep nginx </span><br></pre></td></tr></table></figure>
+<h4 id="获取到nginx的进程号，注意是找到“nginx-master”的那个进程号，如下面的进程好是-15800"><a href="#获取到nginx的进程号，注意是找到“nginx-master”的那个进程号，如下面的进程好是-15800" class="headerlink" title="获取到nginx的进程号，注意是找到“nginx:master”的那个进程号，如下面的进程好是 15800"></a>获取到nginx的进程号，注意是找到“nginx:master”的那个进程号，如下面的进程好是 15800</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">501 15800 1 0 12:17上午 ?? 0:00.00 nginx: master process /usr/<span class="built_in">local</span>/Cellar/nginx/1.8.0/bin/nginx -c /usr/<span class="built_in">local</span>/etc/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line">501 15801 15800 0 12:17上午 ?? 0:00.00 nginx: worker process</span><br><span class="line"></span><br><span class="line">501 15848 15716 0 12:21上午 ttys000 0:00.00 grep nginx</span><br></pre></td></tr></table></figure>
+<h4 id="在终端中输入以下几种命令都可以停止"><a href="#在终端中输入以下几种命令都可以停止" class="headerlink" title="在终端中输入以下几种命令都可以停止"></a>在终端中输入以下几种命令都可以停止</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> -QUIT 15800 (从容的停止，即不会立刻停止)</span><br><span class="line"></span><br><span class="line">Kill -TERM 15800 （立刻停止）</span><br><span class="line"></span><br><span class="line">Kill -INT 15800 （和上面一样，也是立刻停止）</span><br></pre></td></tr></table></figure>
+<h3 id="四、重启"><a href="#四、重启" class="headerlink" title="        四、重启 "></a><span style="color:#e53ecb;">        四、重启 </span></h3><h4 id="如果配置文件错误，则将启动失败，所以在启动nginx之前，需要先验证在配置文件的正确性，如下表示配置文件正确"><a href="#如果配置文件错误，则将启动失败，所以在启动nginx之前，需要先验证在配置文件的正确性，如下表示配置文件正确" class="headerlink" title="如果配置文件错误，则将启动失败，所以在启动nginx之前，需要先验证在配置文件的正确性，如下表示配置文件正确"></a>如果配置文件错误，则将启动失败，所以在启动nginx之前，需要先验证在配置文件的正确性，如下表示配置文件正确</h4><p><code>promote:bin yangqianhua$ /usr/local/Cellar/nginx/1.8.0/bin/nginx -t -c /usr/local/etc/nginx/nginx.conf</code></p>
+<p><code>nginx: the configuration file /usr/local/etc/nginx/nginx.conf syntax is ok</code></p>
+<p><code>nginx: configuration file /usr/local/etc/nginx/nginx.conf test is successful</code></p>
+<h4 id="重启有两种方法"><a href="#重启有两种方法" class="headerlink" title="重启有两种方法"></a>重启有两种方法</h4><p>1 在终端输入输入如下命令即可重启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">promote:~ yangqianhua$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/Cellar/nginx/1.8.0/bin/</span><br><span class="line"></span><br><span class="line">promote:bin yangqianhua$ ./nginx -s reload</span><br><span class="line"></span><br><span class="line">promote:bin yangqianhua$</span><br></pre></td></tr></table></figure>
+<p>2 根据进程号重启，执行命令 kill -HUP 进程号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo nginx 			启动</span><br><span class="line"></span><br><span class="line">$ sudo nginx -s stop		停止</span><br><span class="line"></span><br><span class="line">$ sudo nginx -s reload		重启</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h4 id="如果不能解决：请联系我"><a href="#如果不能解决：请联系我" class="headerlink" title="如果不能解决：请联系我"></a><span style="color:#e53ecb;">如果不能解决</span>：<a href="mailto:854236339@qq.com">请联系我</a></h4>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":1},"log":false});</script></body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
